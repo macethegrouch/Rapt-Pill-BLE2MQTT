@@ -1,6 +1,3 @@
-// SPDX-License-Identifier: MIT
-// Copyright (c) 2025 Kalle Miettinen
-
 #include <Arduino.h>
 #include <BLEDevice.h>
 #include <BLEScan.h>
