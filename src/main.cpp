@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2025 Kalle Miettinen
+
 #include <Arduino.h>
 #include <BLEDevice.h>
 #include <BLEScan.h>
@@ -180,12 +183,9 @@ void reconnect() {
     Serial.println("MQTT connection failed after 5 attempts.");
 }
 
-  
 
 void sendData(const String &jsonPayload) {
-    const char* mqtt_topic = "home/sensor/data";
-
-    if (client.publish(mqtt_topic, jsonPayload.c_str())) {
+    if (client.publish(MQTT_TOPIC, jsonPayload.c_str())) {
         Serial.println("Published JSON to MQTT:");
         Serial.println(jsonPayload);
     } else {
