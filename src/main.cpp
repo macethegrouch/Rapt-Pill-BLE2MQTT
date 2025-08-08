@@ -84,9 +84,9 @@ void processData(const std::string &input, const char* deviceName, int rssi) {
     else                  signalQuality = "Weak";
 
     // Build JSON
-    DynamicJsonDocument doc(1024);
+    JsonDocument doc;
     doc["device"] = deviceName;
-    auto obj = doc.createNestedObject(deviceName);
+    auto obj = doc[deviceName].to<JsonObject>();
     obj["gravityVelocity"] = gravityVelocity;
     obj["temperature"]     = round(temperature*100.0f)/100.0f;
     obj["specificGravity"] = round(specificGravity*10000.0f)/10000.0f;

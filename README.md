@@ -43,3 +43,10 @@ Each BLE advertisement from a RAPT Pill sensor becomes a single JSON message. Ex
 | `battery`         | int    | %             | Battery level in percent                        |        |        |          |
 | `rssi`            | int    | dBm           | Raw BLE signal strength                         |        |        |          |
 | `signalQuality`   | string | —             | \`"Excellent"                                   | "Good" | "Fair" | "Weak"\` |
+
+# Changelog
+
+## Fork changes
+- replaced deprecated json classes/methods
+- added secrets.h to gitignore
+- added esp32dev board to platformio.ini, specified partition table to fix binary oversize issue
